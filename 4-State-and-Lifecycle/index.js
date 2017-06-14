@@ -148,3 +148,68 @@ this.setState(function(prevState,props){
 //         });
 //     });
 // }
+
+
+// ???????????
+// class MergeUpdate extends React.Component{
+//     constructor(props){
+//         super(props);
+//         this.state={
+//             posts:[],
+//             comments:[]
+//         };
+//     }
+//     componentDidMount(){
+//         $.post('/api/posts',data=>{
+//             console.log(data);
+//             this.setState({
+//                 posts:data.posts
+//             })
+//         });
+//         $.post('/api/comments',data=>{
+//             this.setState({
+//                 comments:data.comments
+//             })
+//         });
+//     }
+//     render(){
+//         return(
+//             <div>
+//                 {this.state.posts.map((item,key)=>(
+//                     <h2 key={key}>{item.name}</h2>
+//                 ))}
+//                 {this.state.comments.map((item,key)=>(
+//                     <h2 key={key}>{item.name}</h2>
+//                 ))}
+//             </div>
+//         )
+//     }
+// }
+// ReactDOM.render(
+//     <MergeUpdate />,
+//     document.querySelector("#root5")
+// )
+
+
+
+// 单项数据流
+// <h2>It is {this.state.date.toLocaleTimeString()}</h2>
+// <FormattedDate date={this.state.date} />
+// function FormattedDate(props){
+//     return <h2>It is {props.date.toLocalTimeString()}</h2>;
+// }
+
+
+function App(){
+    return(
+        <div>
+            <Clock2 />
+            <Clock2 />
+            <Clock2 />
+        </div>
+        )
+}
+ReactDOM.render(
+    <App />,
+    document.querySelector("#root4")
+)
